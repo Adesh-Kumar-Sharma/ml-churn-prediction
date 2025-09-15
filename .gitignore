@@ -1,0 +1,14 @@
+# Python Virtual Environment
+.venv/
+
+# Python cache files
+__pycache__/
+
+# VS Code specific settings
+.vscode/
+
+# Trained models and saved objects
+model/
+
+# Data files
+data/
