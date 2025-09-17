@@ -18,6 +18,7 @@ An end-to-end machine learning project that serves a customer churn prediction m
 - [Example Request](#📝-example-request)
 - [Deployment](#☁️-deployment)
 - [Project Structure](#📁-project-structure)
+- [Dataset](#📊-dataset)
 
 ---
 
@@ -193,3 +194,15 @@ This application is ready for deployment on any platform that supports Docker co
 ├── requirements.txt    # Python dependencies
 └── README.md           # This file
 ```
+
+---
+
+## 📊 Dataset
+
+Customer Churn Prediction - Telco Customer Dataset
+
+Download: [https://www.kaggle.com/datasets/blastchar/telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+
+Alternative: Use synthetic data generation script provided
+
+---
