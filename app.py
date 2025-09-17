@@ -1,4 +1,6 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
 from pydantic import BaseModel
 import joblib
 import pandas as pd
@@ -6,11 +8,39 @@ import numpy as np
 from typing import Dict, Any
 import os
 
+ml_models = {}
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Code to run before the app starts accepting requests
+    print("Loading ML model...")
+    ml_models["churn_model"] = joblib.load("model/churn_model.pkl")
+    print("Model loaded successfully!")
+    yield
+    # Code to run when the app is shutting down
+    print("Clearing ML models...")
+    ml_models.clear()
+
 # Initialize FastAPI app
 app = FastAPI(
     title="Customer Churn Prediction API",
     description="Predict customer churn using machine learning",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# Define the list of origins that are allowed to make requests
+origins = [
+    "http://localhost:3000",  # Next.js app's origin
+]
+
+# CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
 )
 
 # Load model and encoders
@@ -57,6 +87,9 @@ async def health_check():
 
 @app.post("/predict", response_model=PredictionResponse)
 async def predict_churn(customer: CustomerData):
+    # Get the model from the dictionary
+    model = ml_models["churn_model"]
+
     if not model:
         raise HTTPException(status_code=503, detail="Model not loaded")
     
