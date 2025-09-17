@@ -29,9 +29,11 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# Define the list of origins that are allowed to make requests
+# Define the list of origins (Next.js) that are allowed to make requests
 origins = [
-    "http://localhost:3000",  # Next.js app's origin
+    "http://localhost:3000",
+    "https://ml-churn-frontend-mocha.vercel.app/",
+    "https://ml-churn-pd-frontend.vercel.app/"
 ]
 
 # CORS middleware
@@ -67,7 +69,6 @@ class CustomerData(BaseModel):
 class PredictionResponse(BaseModel):
     churn_probability: float
     prediction: str
-    confidence: float
 
 # Routes
 @app.get("/")
@@ -127,13 +128,9 @@ async def predict_churn(customer: CustomerData):
         # Get the prediction result (0 or 1) from the array
         prediction_result = prediction[0]
         
-        # Optional but recommended: Calculate confidence from the single probability
-        confidence = churn_probability
-        
         return PredictionResponse(
             churn_probability=churn_probability,
             prediction="Will Churn" if prediction_result == 1 else "Will Not Churn",
-            confidence=confidence
         )
         
     except Exception as e:
