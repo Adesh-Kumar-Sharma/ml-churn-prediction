@@ -32,7 +32,7 @@ app = FastAPI(
 # Define the list of origins (Next.js) that are allowed to make requests
 origins = [
     "http://localhost:3000",
-    "https://ml-churn-frontend.vercel.app/"
+    "https://ml-churn-frontend.vercel.app"
 ]
 
 # CORS middleware
