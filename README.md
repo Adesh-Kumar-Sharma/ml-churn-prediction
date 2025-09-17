@@ -17,8 +17,10 @@ An end-to-end machine learning project that serves a customer churn prediction m
 - [API Endpoints](#🔌-api-endpoints)
 - [Example Request](#📝-example-request)
 - [Deployment](#☁️-deployment)
+- [Screenshots](#📷-screenshots)
 - [Project Structure](#📁-project-structure)
 - [Dataset](#📊-dataset)
+- [Related Links](#🔗-related-links)
 
 ---
 
@@ -180,6 +182,13 @@ This application is ready for deployment on any platform that supports Docker co
 
 ---
 
+## 📷 Screenshots
+
+![Docs Part 1](public/docs-1.png)
+![Docs Part 2](public/docs-2.png)
+
+---
+
 ## 📁 Project Structure
 
 ```structure
@@ -204,5 +213,14 @@ Customer Churn Prediction - Telco Customer Dataset
 Download: [https://www.kaggle.com/datasets/blastchar/telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
 Alternative: Use synthetic data generation script provided
+
+---
+
+---
+
+## 🔗 Related Links
+
+- Next.js frontend repo — [https://github.com/Adesh-Kumar-Sharma/ml-churn-frontend](https://github.com/Adesh-Kumar-Sharma/ml-churn-frontend)
+- Next.js frontend website — [https://ml-churn-frontend.vercel.app](https://ml-churn-frontend.vercel.app)
 
 ---
