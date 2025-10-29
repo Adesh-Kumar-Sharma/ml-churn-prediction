@@ -10,17 +10,17 @@ An end-to-end machine learning project that serves a customer churn prediction m
 
 ## 📋 Table of Contents
 
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Installation and Setup](#installation-and-setup)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Example Request](#example-request)
-- [Deployment](#deployment)
-- [Screenshots](#screenshots)
-- [Project Structure](#project-structure)
-- [Dataset](#dataset)
-- [Related Links](#related-links)
+- [Key Features](#-key-features)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
+- [Dataset](#-dataset)
+- [Installation and Setup](#%EF%B8%8F-installation-and-setup)
+- [Usage](#-usage)
+- [API Endpoints](#-api-endpoints)
+- [Example Request](#-example-request)
+- [Deployment](#%EF%B8%8F-deployment)
+- [Screenshots](#-screenshots)
+- [Project Structure](#-project-structure)
+- [Related Links](#-related-links)
 
 ---
 
