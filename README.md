@@ -10,17 +10,17 @@ An end-to-end machine learning project that serves a customer churn prediction m
 
 ## 📋 Table of Contents
 
-- [Key Features](#✨-key-features)
-- [Tech Stack](#🛠️-tech-stack)
-- [Installation and Setup](#⚙️-installation-and-setup)
-- [Usage](#🚀-usage)
-- [API Endpoints](#🔌-api-endpoints)
-- [Example Request](#📝-example-request)
-- [Deployment](#☁️-deployment)
-- [Screenshots](#📷-screenshots)
-- [Project Structure](#📁-project-structure)
-- [Dataset](#📊-dataset)
-- [Related Links](#🔗-related-links)
+- [Key Features](#✨ key-features)
+- [Tech Stack](#🛠️ tech-stack)
+- [Installation and Setup](#⚙️ installation-and-setup)
+- [Usage](#🚀 usage)
+- [API Endpoints](#🔌 api-endpoints)
+- [Example Request](#📝 example-request)
+- [Deployment](#☁️ deployment)
+- [Screenshots](#📷 screenshots)
+- [Project Structure](#📁 project-structure)
+- [Dataset](#📊 dataset)
+- [Related Links](#🔗 related-links)
 
 ---
 
@@ -41,6 +41,16 @@ An end-to-end machine learning project that serves a customer churn prediction m
 - **Server**: 🦄 Uvicorn
 - **Containerization**: 🐳 Docker
 - **Deployment**: 🚂 Railway / Render
+
+---
+
+## 📊 Dataset
+
+Customer Churn Prediction - Telco Customer Dataset
+
+Download: [https://www.kaggle.com/datasets/blastchar/telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+
+Alternative: Use synthetic data generation script provided
 
 ---
 
@@ -65,13 +75,13 @@ cd ml-churn-prediction
 This project requires Python 3.9. Create a new virtual environment using the following command in bash:
 
 ```bash
-py -3.9 -m venv .venv
+python3.9 -m venv .venv
 ```
 
 ### 4. Activate the Environment
 
 ```bash
-./.venv/Scripts/Activate.ps1
+source .venv/bin/activate
 ```
 
 ### 5. Install Dependencies
@@ -79,10 +89,15 @@ py -3.9 -m venv .venv
 Install all the required Python packages from requirements.txt:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-### 6. Train the Model
+### 6. Download the dataset (Optional)
+
+Download the Telco Customer Churn dataset from Kaggle and place it in the `data/` directory.
+Then, unzip the dataset and rename the file to `telco_churn.csv`.
+
+### 7. Train the Model
 
 Run the training script to generate the machine learning model file (`churn_model.pkl`):
 
@@ -114,10 +129,22 @@ Build the Docker Image:
 docker build -t churn-api .
 ```
 
+OR
+
+```bash
+sudo docker build -t churn-api .
+```
+
 Run the Docker Container:
 
 ```bash
 docker run -p 8000:8000 churn-api
+```
+
+OR
+
+```bash
+sudo docker run -p 8000:8000 churn-api
 ```
 
 The API will be accessible on your host machine at [http://localhost:8000](http://localhost:8000).
@@ -203,18 +230,6 @@ This application is ready for deployment on any platform that supports Docker co
 ├── requirements.txt    # Python dependencies
 └── README.md           # This file
 ```
-
----
-
-## 📊 Dataset
-
-Customer Churn Prediction - Telco Customer Dataset
-
-Download: [https://www.kaggle.com/datasets/blastchar/telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
-
-Alternative: Use synthetic data generation script provided
-
----
 
 ---
 
