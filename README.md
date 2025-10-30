@@ -8,6 +8,12 @@ An end-to-end machine learning project that serves a customer churn prediction m
 
 ---
 
+## Live Demo
+
+Try it now: [https://ml-churn-prediction.onrender.com/docs](https://ml-churn-prediction.onrender.com/docs)
+
+---
+
 ## 📋 Table of Contents
 
 - [Key Features](#-key-features)
